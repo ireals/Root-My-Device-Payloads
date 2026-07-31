@@ -3,11 +3,11 @@
 
 /* Xiaomi 15T Pro (klimt) — HyperOS OS3.0.301.0.WOSJPXM (JP), MT6989 / Dimensity 9400+
  *
- *   kernel 6.6.89-android15-8-g0889fe95bb10  (GKI, 4K pages)
+ *   kernel 6.6.89-android15-8-g0889fe95bb10-ab14402178-4k  (GKI, 4K pages)
  *   build  Xiaomi/klimt/klimt:16/BP2A.250605.031.A3/...:user/release-keys
  *
  * Build with:
- *   make TARGET=klimt/jp/6.6.89-android15-8-g0889fe95bb10
+ *   make TARGET=klimt/jp/6.6.89-android15-8-g0889fe95bb10-ab14402178-4k
  *
  * All offsets derived from vmlinux via IDA Pro MCP (2026-07-31).
  * vmlinux SHA256: 14c19e6ae18d0ce7db695e336292ae2c19a67902739d5cc8a2b78b10914010c8
