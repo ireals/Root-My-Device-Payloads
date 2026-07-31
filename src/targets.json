@@ -68,6 +68,26 @@
       "status": "the LD_PRELOAD build roots this device on the first attempt, and every matched field here -- kernelRelease, kernelVersion, kernelBuildVersion, buildFingerprint, buildDisplay, sdk, abi, pageSize -- is read off the device rather than reasoned from the image; `getprop ro.build.display.id` returns the fingerprint's ID field, not the incremental this entry first guessed. The application route is complete as of the init-spawned bootstrap helper: run from the app on release payloads-3-708b215 it reached done=1 root=1 on the first attempt at uid 10340, and ksud then loaded KernelSU -- `kernelsu.ko loaded successfully`, `KernelSU live: late_load=true` -- the version that run printed was 30001, which was the build's shallow submodule and not the module; rebuilt from full history it reads 32525 and the manager accepts it, shown as `32525-2` on its home screen -- with system_server at its original pid and all three Zygisk modules in place. The helper is exec'd by init, not forked from the app, because an app process carries a seccomp filter that no amount of uid 0 removes"
     },
     {
+      "profileId": "klimt-jp-OS3.0.301.0.WOSJPXM",
+      "payload": "CVE-2026-43499",
+      "core": "core66",
+      "device": "klimt",
+      "region": "JP",
+      "manufacturer": "Xiaomi",
+      "model": "Xiaomi 15T Pro",
+      "marketingName": "Xiaomi 15T Pro",
+      "soc": "MediaTek MT6989",
+      "kernelRelease": "6.6.89-android15-8-g0889fe95bb10",
+      "kernelVersion": null,
+      "kernelBuildVersion": null,
+      "buildDisplay": "BP2A.250605.031.A3",
+      "buildFingerprint": "Xiaomi/klimt/klimt:16/BP2A.250605.031.A3/OS3.0.301.0.WOSJPXM:user/release-keys",
+      "sdk": 36,
+      "abi": "arm64-v8a",
+      "pageSize": 4096,
+      "status": "the adb route (LD_PRELOAD, non-app build) roots this device; the exploit chain reached uid 0 and SELinux permissive through the standalone klimt-BP2A.250605.031.A3 build. The offsets in target-core66.h are from IDA MCP on this firmware's vmlinux (SHA256 14c19e6ae18d0ce7db695e336292ae2c19a67902739d5cc8a2b78b10914010c8). kernelVersion / kernelBuildVersion have not been captured from /proc/version yet, so this target is carried but excluded from the feed. The core66 payload build has not been tested on this device"
+    },
+    {
       "profileId": "xig07-jp-OS3.0.7.0.WNEJPKD",
       "payload": "CVE-2026-43499",
       "core": "core61",
