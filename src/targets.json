@@ -70,7 +70,7 @@
     {
       "profileId": "klimt-jp-OS3.0.301.0.WOSJPXM",
       "payload": "CVE-2026-43499",
-      "core": "core66",
+      "core": "core66-2",
       "device": "klimt",
       "region": "JP",
       "manufacturer": "Xiaomi",
