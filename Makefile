@@ -106,7 +106,7 @@ CORE_SRCS := \
 # user space. core61 does not: it has the kernel exec the helper through a
 # usermodehelper work item and calls none of root_helper.c, so linking it there
 # would carry an init hijack no run of that core can reach.
-ROOT_HELPER_CORES := core66 core612
+ROOT_HELPER_CORES := core66 core612 core66-2
 ROOT_HELPER_SRCS := \
   $(if $(filter $(CORE),$(ROOT_HELPER_CORES)),$(PAYLOAD_DIR)/root_helper.c)
 
